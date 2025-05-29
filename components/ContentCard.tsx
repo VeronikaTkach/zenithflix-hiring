@@ -13,7 +13,7 @@ export const ContentCard = React.memo(
   function ContentCard({ item, onSelect }: Props) {
     const [loaded, setLoaded] = useState(false);
     const style = useMemo(
-      () => ({ width: "160px", height: "320px" }),
+      () => ({ width: "180px", height: "320px", padding: "8px" }),
       []
     );
 
@@ -23,7 +23,7 @@ export const ContentCard = React.memo(
         tabIndex={0}
         onClick={() => onSelect(item)}
         onKeyDown={(e) => e.key === "Enter" && onSelect(item)}
-        className="flex-shrink-0 w-[160px] box-border focus:outline-none cursor-pointer"
+        className="flex-shrink-0 w-[160px] box-border focus:outline-none focus:ring cursor-pointer"
         style={style}
       >
         {!loaded && <Skeleton width="100%"/>}

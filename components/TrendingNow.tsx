@@ -36,7 +36,7 @@ export const TrendingNow: React.FC = () => {
       )}
 
       {!loading && !error && (
-        <div className="flex overflow-x-auto overflow-y-hidden gap-4">
+        <div className="flex overflow-x-auto overflow-y-hidden gap-4 h-[380px] p-2">
           {data.map((item) => (
             <ContentCard key={item.id} item={item} onSelect={handleSelect} />
           ))}
