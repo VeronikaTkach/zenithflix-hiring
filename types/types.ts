@@ -6,4 +6,5 @@ export interface ContentItem {
   year: number;
   thumbnail: string | StaticImageData;
   rating: number;
+  watchProgress: number;
 }
