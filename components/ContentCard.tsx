@@ -45,8 +45,7 @@ export const ContentCard = React.memo(
         <p className="text-xs text-gray-500">
           {item.year} • {item.rating}/10
         </p>
-
-        {/* Hover overlay with full info */}
+        
         <div
           className="
             absolute inset-0 

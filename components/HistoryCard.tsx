@@ -44,10 +44,10 @@ export const HistoryCard: React.FC<Props> = ({ item }) => (
       "
     >
       <button
-        onClick={() => alert('Сщтештгу ещ Цфеср')}
+        onClick={() => alert('Continue Watching')}
         className="bg-white text-black py-1 px-2 rounded focus:outline-none focus:ring"
       >
-        Continue to Watch
+        Continue Watching
       </button>
     </div>
   </div>

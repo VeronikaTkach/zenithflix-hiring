@@ -1,11 +1,11 @@
 'use client';
 import React, { useCallback, useState } from 'react';
 import { useContent } from '@/context/ContentContext';
-import { ContentRow } from '@/components/ContentRow';
 import { ContentCard } from '@/components/ContentCard';
 import { Modal } from '@/components/Modal';
 import { ContentDetail } from '@/components/ContentDetail';
 import { ContentItem } from '@/types/types';
+import { ContentRowInfinite } from './ContentRowInfinite';
 
 export const TrendingNow: React.FC = () => {
   const { data, loading, error, refresh } = useContent();
@@ -27,12 +27,11 @@ export const TrendingNow: React.FC = () => {
           </button>
         </div>
       )}
-
-      <ContentRow
+      <ContentRowInfinite
         title="Trending Now"
-        items={data}
         loading={loading}
-        renderItem={(item) => (
+        items={data}
+        renderItem={item => (
           <ContentCard
             key={item.id}
             item={item}
@@ -40,6 +39,8 @@ export const TrendingNow: React.FC = () => {
             isSelected={selected?.id === item.id}
           />
         )}
+        itemWidth={160}
+        gap={16}
       />
 
       <Modal isOpen={!!selected} onClose={handleClose}>
