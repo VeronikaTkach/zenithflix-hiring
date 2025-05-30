@@ -1,12 +1,16 @@
-import React from "react";
-import { TrendingNow } from "@/components/TrendingNow";
-import { WatchHistory } from "@/components/WatchHistory";
+'use client';
+import React from 'react';
+import { ContentProvider } from '@/context/ContentContext';
+import { WatchHistory } from '@/components/WatchHistory';
+import { TrendingNow } from '@/components/TrendingNow';
 
-const Home: React.FC = () => (
-  <main className="p-6 space-y-8">
-    <WatchHistory />
-    <TrendingNow />
-  </main>
-);
-
-export default Home;
+export default function HomePage() {
+  return (
+    <ContentProvider>
+      <main className="p-6 space-y-8">
+        <WatchHistory />
+        <TrendingNow />
+      </main>
+    </ContentProvider>
+  );
+}

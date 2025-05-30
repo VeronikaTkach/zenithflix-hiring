@@ -22,16 +22,24 @@ export const Modal: React.FC<ModalProps> = ({ isOpen, onClose, children }) => {
     <div
       role="dialog"
       aria-modal="true"
-      className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center"
+      className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4"
       onClick={onClose}
     >
       <div
-        className="bg-white p-4 rounded max-w-md w-full"
+        className="
+          bg-white 
+          p-4 
+          rounded 
+          max-w-md 
+          w-full 
+          max-h-[90vh] 
+          overflow-y-auto
+        "
         onClick={(e) => e.stopPropagation()}
       >
         <button
           aria-label="Close"
-          className="float-right text-gray-500 hover:text-black"
+          className="float-right text-gray-500 hover:text-black text-3xl"
           onClick={onClose}
         >
           &times;

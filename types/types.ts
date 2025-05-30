@@ -7,4 +7,8 @@ export interface ContentItem {
   thumbnail: string | StaticImageData;
   rating: number;
   watchProgress: number;
+  genre: string;
+  duration: number;
+  description: string;
+  cast: Array<string>;
 }

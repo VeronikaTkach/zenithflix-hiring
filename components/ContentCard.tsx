@@ -7,6 +7,7 @@ import { Skeleton } from "@/components/Skeleton";
 interface Props {
   item: ContentItem;
   onSelect: (item: ContentItem) => void;
+  isSelected?: boolean;
 }
 
 export const ContentCard = React.memo(
