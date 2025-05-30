@@ -22,19 +22,13 @@ export const HistoryCard: React.FC<Props> = ({ item }) => (
       className="object-cover rounded"
       loading="lazy"
     />
-
-    {/* Progress bar */}
     <div className="absolute bottom-0 left-0 w-full h-1 bg-gray-300">
       <div
         className="h-full bg-blue-600"
         style={{ width: `${item.progress}%` }}
       />
     </div>
-
-    {/* Title */}
     <h3 className="mt-2 text-sm font-medium truncate">{item.title}</h3>
-
-    {/* Hover overlay */}
     <div
       className="
         absolute inset-0

@@ -2,7 +2,7 @@
 import React, { useCallback, useState } from 'react';
 import { useContent } from '@/context/ContentContext';
 import { ContentCard } from '@/components/ContentCard';
-import { Modal } from '@/components/Modal';
+import { Modal } from '@/components/Modal/Modal';
 import { ContentDetail } from '@/components/ContentDetail';
 import { ContentItem } from '@/types/types';
 import { ContentRowInfinite } from './ContentRowInfinite';
