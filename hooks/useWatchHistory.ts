@@ -15,7 +15,6 @@ type Stored = { id: number; progress: number }[];
 export function useWatchHistory() {
   const [history, setHistory] = useState<HistoryItem[]>([]);
 
-  // Читаем из localStorage
   useEffect(() => {
     try {
       const raw = localStorage.getItem(STORAGE_KEY);
@@ -32,13 +31,11 @@ export function useWatchHistory() {
     }
   }, []);
 
-  // Для примера — метод добавления (UI пока не использует)
   const addToHistory = (id: number, progress: number) => {
     const next: Stored = [...history.map(h => ({ id: h.id, progress: h.progress }))]
       .filter(h => h.id !== id)
       .concat({ id, progress });
     localStorage.setItem(STORAGE_KEY, JSON.stringify(next));
-    // Обновляем стейт
     setHistory(
       next
         .map(h => {
