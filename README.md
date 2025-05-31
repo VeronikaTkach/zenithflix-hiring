@@ -20,6 +20,9 @@
    - Run `npm run build`  
    - To see the production version locally, run `npm run start` and go to `http://localhost:3000`
 
+6. **Test Deployment**  
+   - A test deployment is available at: https://zenithflix-hiring.vercel.app/
+
 
 ### Folders and Files Description
 
