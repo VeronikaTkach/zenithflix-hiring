@@ -1,4 +1,4 @@
-### Setup Instructions
+## Setup Instructions
 
 1. **Clone the Repository**  
    - Run `git clone git@github.com:VeronikaTkach/zenithflix-hiring.git`  
@@ -24,9 +24,9 @@
    - A test deployment is available at: https://zenithflix-hiring.vercel.app/
 
 
-### Folders and Files Description
+## Folders and Files Description
 
-## Project Structure
+### Project Structure
 
 - **app/**  
   Holds Next.js configuration files (App Router).  
@@ -77,7 +77,7 @@
 - configs and support files
 
 
-## Brief Explanation of Architectural Decisions
+### Brief Explanation of Architectural Decisions
 
 *Components and Separation of Concerns*  
 - Each component does one job: card, modal, infinite scroll row, etc.  
@@ -162,7 +162,7 @@
   In the future, update `WatchHistory.tsx` so that it also uses `ContentRowInfinite` for consistent infinite scroll behavior and layout.
 
 
-## User Flow
+### User Flow
 
 1. **First Visit (Empty History)**  
    - The user opens the app and sees the main page.  
