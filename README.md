@@ -199,7 +199,7 @@
    - The “Continue Watching” section displays history cards (`HistoryCard`).  
    - Under each history card is a progress bar showing how much of the movie was watched.  
    - Hovering over a history card shows an overlay with a **Continue to Watch** button.  
-   - Clicking that button currently shows an alert “Сщтештгу ещ Цфеср” (placeholder for future resume logic).
+   - Clicking that button currently shows an alert “Continue to Watch” (placeholder for future resume logic).
 
 7. **Mobile Adaptation**  
    - Hover is not available on touch devices, so `HistoryCard` can show the **Continue to Watch** button always or on long-press.  
