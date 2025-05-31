@@ -6,6 +6,7 @@ import React, {
   useEffect,
   ReactNode,
   KeyboardEvent,
+  WheelEvent,
 } from 'react';
 import { Skeleton } from '@/components/Skeleton';
 
@@ -31,6 +32,7 @@ export function ContentRowInfinite<T>({
   const headingId = `${title.toLowerCase().replace(/\s+/g, '-')}-heading`;
   const containerRef = useRef<HTMLDivElement>(null);
   const sentinelRef = useRef<HTMLDivElement>(null);
+
   const [visibleCount, setVisibleCount] = useState<number>(0);
 
   useEffect(() => {
@@ -81,6 +83,14 @@ export function ContentRowInfinite<T>({
     }
   };
 
+  const handleWheel = (e: WheelEvent<HTMLDivElement>) => {
+    if (!containerRef.current) return;
+    if (e.deltaY !== 0) {
+      e.preventDefault();
+      containerRef.current.scrollLeft += e.deltaY;
+    }
+  };
+
   return (
     <section role="region" aria-labelledby={headingId} className="py-4">
       <h2 id={headingId} className="text-2xl font-semibold mb-4">
@@ -92,17 +102,18 @@ export function ContentRowInfinite<T>({
         className="flex overflow-x-auto overflow-y-hidden gap-4 p-2 focus:outline-none"
         tabIndex={0}
         onKeyDown={handleKeyDown}
+        onWheel={handleWheel}
       >
         {loading
-          ? 
+          ?
             Array.from({ length: skeletonCount }).map((_, i) => (
               <div key={i} style={{ width: itemWidth }} className="flex-shrink-0">
                 <Skeleton width="100%" height="240px" />
               </div>
             ))
-          : 
+          :
             items.slice(0, visibleCount).map((item, idx) => renderItem(item, idx))}
-            
+
         {!loading && visibleCount < items.length && (
           <div
             ref={sentinelRef}
